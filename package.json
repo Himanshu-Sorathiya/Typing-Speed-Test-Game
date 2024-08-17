@@ -1,0 +1,18 @@
+{
+  "name": "02---typing-speed-game",
+  "version": "1.0.0",
+  "description": "You may have tested your typing speed on different typing speed test websites. In this game, users have 60 seconds to type as many characters as possible and can check their WPM, CPM, accuracy, and more. Users can even erase their incorrect characters or go back using the backspace key.",
+  "main": "script.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i src/styles/tailwind.css -o dist/style.css -w",
+    "typescript": "npx tsc -w"
+  },
+  "author": "Himanshu Sorathiya",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  }
+}
