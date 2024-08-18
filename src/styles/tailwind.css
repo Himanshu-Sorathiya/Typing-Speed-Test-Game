@@ -1,3 +1,89 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @keyframes cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply flex h-screen w-screen items-center justify-center bg-cyan-500;
+  }
+
+  .game-container {
+    @apply rounded-lg bg-white p-8;
+  }
+
+  .game-area {
+    @apply flex max-w-screen-sm flex-col rounded-lg border border-solid border-gray-400 p-4 text-2xl;
+  }
+
+  .paragraph-container {
+    @apply border-b border-solid border-gray-400 pb-3;
+  }
+
+  .paragraph {
+    @apply whitespace-pre-wrap;
+    word-break: break-word;
+  }
+
+  .paragraph span {
+    @apply inline-block;
+  }
+
+  .dashboard-info {
+    @apply flex flex-nowrap items-center justify-between border-solid border-gray-400 pt-3;
+  }
+
+  .metrics {
+    @apply flex flex-grow text-lg font-semibold justify-between;
+  }
+
+  .matrix {
+    @apply flex gap-1 border-l border-l-black pl-2.5;
+  }
+
+  .matrix:first-of-type {
+    @apply border-l-0 pl-0;
+  }
+
+  .btn-container {
+    @apply ml-12;
+  }
+
+  .btn {
+    @apply rounded-lg bg-cyan-500 px-4 py-1.5 text-lg text-white;
+  }
+
+  .active {
+    @apply relative text-cyan-500;
+  }
+
+  .active::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-1 w-full bg-current;
+    animation: cursor-blink 1s linear infinite;
+  }
+
+  .correct {
+    @apply text-green-600;
+  }
+
+  .incorrect {
+    @apply relative text-red-500;
+  }
+
+  .incorrect::after {
+    content: "";
+    @apply absolute inset-0 mx-auto h-full w-11/12 rounded-md top-0 left-0 bg-red-500/30;
+  }
+}
